@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator</title>
+    
+    <style>
+      *{
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        background-image: url(background.png);
+        font-family: dosis, sans-serif;
+      }
+      .main {
+        border: 3px solid white;
+        width: 310px;
+        height: 450px;
+        position: fixed;
+        left: 38%;
+        top: 10%;
+        box-shadow: 2px 4px 19px #1212121;
+        background: #00BFFF;
+        border-radius: 20px;
+      }
+
+      .submain{
+        margin: 40px 7%;
+      }
+
+      .tombol{
+        width: 55px;
+        height: 55px;
+        font-size: 20px;
+        margin: 3px
+        border: none;
+        border-bottom: none;
+        background: white;
+        color: #2d354a;
+        cursor: pointer;
+        font-family: times new roman, sans-serif;
+        font-weight: bolder;
+        outline: none;
+      }
+
+      input[type="button"]:hover{
+        background: #A9A9A9;
+      }
+
+      .submit:hover{
+        background: orange;
+        opacity: 60%;
+      }
+
+      .tampilan{
+        width: 100%;
+        height: 35px;
+        font-size: 25px;
+        margin: 10px 0%;
+        border-radius: 4px;
+        font-family: times new roman, sans-serif;
+        border: none;
+        font-weight: bolder;
+      }
+
+      .submit {
+        width: 55px;
+        height: 55px;
+        font-size: 20px;
+        border: none;
+        border-bottom: none;
+        background: orange;
+        color: white;
+        cursor: pointer;
+        font-family: times new roman, sans-serif;
+        font-weight: bolder;
+        outline: none;
+      }
+
+      input[value="="]{
+        background: #FF4500;
+      }
+
+      h2 {
+        position: fixed;
+        top: 11%;
+        left: 42%;
+        color: white;
+        font-weight: bold;
+        text-transform: uppercase;
+        font-family: times new roman, sans-serif;
+        font-size: 30px;
+      }
+    </style>
+
+
+
+
+    <script>
+      function hasil(){
+        var nilai = document.form.tampilan.value;
+        if(nilai) {
+          document.form.tampilan.value = eval(nilai);
+        }
+      }
+
+      function reset(){
+        document.form.tampilan.value = "";
+      }
+
+      function hapus(){
+        var nilai = document.form.tampilan.value;
+        document.form.tampilan.value = nilai.substring(0,nilai.length-1);
+      }
+
+      function masukan(num){
+        if (num == 'pangkat') {
+          document.form.tampilan.value = Math.pow(document.form.tampilan.value, 2);
+        }
+        else if (num == '%') {
+          document.form.tampilan.value = document.form.tampilan.value/100;
+        }
+          else {
+            document.form.tampilan.value = document.form.tampilan.value+num;
+          }
+      }
+    </script>
+  </head>
+  <body>
+
+  
+	   <div class="main">
+       <h2>Kalkulator</h2>
+       <div class="submain">
+		     <form name="form">
+           <input class="tampilan" name="tampilan" value="">
+            </form>
+               <table>
+                 <tr>
+                
+                   <td><input class="tombol" type="button" value="%" onclick="masukan('%')"></td>      
+                   <td><input class="tombol" type="button" value="C" onclick="reset()"></td>
+                   <td><input class="tombol" type="button" value="<" onclick="hapus()"></td>
+                   <td><input class="submit" type="submit" value="/" onclick="masukan('/')"></td>
+                 
+			           </tr>
+                 <tr>
+                   <td><input class="tombol" type="button" value="7" onclick="masukan(7)"></td>
+                   <td><input class="tombol" type="button" value="8" onclick="masukan(8)"></td>
+                   <td><input class="tombol" type="button" value="9" onclick="masukan(9)"></td>
+                   <td><input class="submit" type="submit" value="x" onclick="masukan('*')"></td>
+                  
+			           </tr>
+                 <tr>
+                   <td><input class="tombol" type="button" value="4" onclick="masukan(4)"></td>
+                   <td><input class="tombol" type="button" value="5" onclick="masukan(5)"></td>
+                   <td><input class="tombol" type="button" value="6" onclick="masukan(6)"></td>
+                   <td><input class="submit" type="submit" value="-" onclick="masukan('-')"></td>
+                   
+			          </tr>
+                <tr>
+                  <td><input class="tombol" type="button" value="1" onclick="masukan(1)"></td>
+                  <td><input class="tombol" type="button" value="2" onclick="masukan(2)"></td>
+                  <td><input class="tombol" type="button" value="3" onclick="masukan(3)"></td>
+                  <td><input class="submit" type="submit" value="+" onclick="masukan('+')"></td>
+                  
+			          </tr>
+                <tr>
+                  <td><input class="tombol" type="button" value="x&sup2" onclick="masukan('pangkat')"></td>
+                  <td><input class="tombol" type="button" value="0" onclick="masukan(0)"></td>
+                  <td><input class="tombol" type="button" value="." onclick="masukan('.')"></td>
+                  <td><input class="submit" type="submit" value="=" onclick="hasil()"></td>
+                  
+			          </tr>
+		          </table>
+           
+        </div>
+	   </div>
+  </body>
+</html>
