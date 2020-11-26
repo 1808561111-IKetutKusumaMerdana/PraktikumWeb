@@ -1,0 +1,31 @@
+.margin{
+	margin : 1rem 21rem;
+}
+.tengah{
+	text-align : center;
+
+}
+*{
+	font-family: Montserrat;
+	font-weight: bold;
+	margin: 0;
+	padding: 0;
+
+}
+.container{
+	display:inherit;
+	left: 10px;
+	background-image: linear-gradient( 109.6deg,  rgba(5,84,94,1) 16%, #bbb 91.1% );
+	height: 100%;
+}
+fieldset{
+	background-color: 61b15a;
+	border-radius: 20px;
+}
+legend{
+	background-color: adce74;
+}
+.konten {
+	text-align: center;
+	
+}
