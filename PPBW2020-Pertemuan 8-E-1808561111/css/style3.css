@@ -1,0 +1,57 @@
+body {
+    background-image: linear-gradient( 114.2deg,  rgba(121,194,243,1) 22.6%, rgba(255,180,239,1) 67.7% );
+    font: 400 14px;
+    padding: 20px;
+}
+
+.box{
+    margin-left: 30%;
+}
+
+a{
+    background-color:#21209c;
+    padding: 7px;
+    border-radius: 5px;
+    color: black;
+    text-decoration: none;
+    color: white;
+}
+
+form{
+    margin-left: 37%;
+    margin-right: 37%;
+   
+    
+}
+
+td{
+    padding-left: 30px;
+    color: black;
+}
+
+input[type="number"], input[type="text"]{
+    height: 20px;
+    background-color: blue;
+    color: black;
+}
+
+h2, h3{
+    text-align: center;
+    color: black;
+}
+
+input[type="submit"]{
+    background-color: #21209c;
+    padding: 7px;
+    border-radius: 5px;
+    color: blue;
+    text-decoration: none;
+}
+
+.container-edit{
+    background-color: #dff3e3;
+}
+
+.container-insert{
+    
+}
